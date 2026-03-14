@@ -27,11 +27,12 @@ Son idée centrale est simple : une IA ne devrait pas collaborer *tout le temps*
 
 ## Motivation & Problème
 
-Ce projet est né d'une observation terrain lors du développement de systèmes multi-agents. Malgré la multiplication des modèles, ces derniers ne partagent souvent aucune mémoire commune et, surtout, ils ne savent pas quand ils devraient demander de l'aide. Ils répondent toujours avec la même confiance, même quand ils ne savent pas.
+Ce projet est né d'une observation terrain lors du développement de **Dymmo**, une infrastructure financière pilotée par des agents IA. Malgré la multiplication des modèles (Claude, Gemini, GPT), nous avons constaté deux limites majeures : ces agents ne partageaient aucune mémoire commune et, surtout, ils ne savaient pas quand ils auraient dû demander de l'aide.
 
-### Les deux faiblesses structurelles :
+### Les deux faiblesses structurelles identifiées sur Dymmo :
 1. **Surconfiance algorithmique :** Un LLM ne raisonne pas sur sa propre compétence. Il n'a aucun mécanisme interne pour dire : *"Je ne suis pas sûr. Je devrais demander de l'aide."*
-2. **Absence de mémoire partagée :** Quand plusieurs agents travaillent sur un même projet, chacun repart de son propre contexte, entraînant un retraitement inutile et un gaspillage de tokens.
+2. **Absence de mémoire partagée :** Les agents retraitent les mêmes informations en silo, entraînant un gaspillage massif de tokens et des incohérences dans les décisions financières.
+
 
 **Question de recherche centrale :**
 > *Comment un système d'IA peut-il détecter le seuil de sa propre compétence, décider intelligemment quand collaborer, et partager une mémoire commune avec d'autres agents ?*
