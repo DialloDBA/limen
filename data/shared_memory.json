@@ -1,0 +1,18 @@
+[
+  {
+    "key": "last_question",
+    "value": "Explique brièvement ce qu'est un test unitaire.",
+    "source": "orchestrator",
+    "tags": [
+      "question"
+    ]
+  },
+  {
+    "key": "last_decision",
+    "value": "consult_peers",
+    "source": "decision_engine",
+    "tags": [
+      "decision"
+    ]
+  }
+]

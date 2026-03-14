@@ -1,0 +1,52 @@
+providers:
+  mock_shared:
+    type: mock
+    name: mock-core
+
+  local_generator:
+    type: mock
+    name: mock-generator
+
+  local_critic:
+    type: mock
+    name: mock-critic
+
+  local_synthesizer:
+    type: mock
+    name: mock-synthesizer
+
+agents:
+  assessor:
+    provider_ref: mock_shared
+    prompt_ref: assessor
+    temperature: 0.0
+    max_tokens: 500
+
+  generator:
+    provider_ref: local_generator
+    prompt_ref: generator
+    temperature: 0.2
+    max_tokens: 1200
+
+  critic:
+    provider_ref: local_critic
+    prompt_ref: critic
+    temperature: 0.1
+    max_tokens: 1200
+
+  synthesizer:
+    provider_ref: local_synthesizer
+    prompt_ref: synthesizer
+    temperature: 0.1
+    max_tokens: 1200
+
+workflow:
+  revision_threshold: 7
+  thresholds:
+    answer_confidence: 0.75
+    consult_confidence: 0.40
+    max_risk_for_direct_answer: 0.35
+    max_risk_for_consultation: 0.80
+
+memory:
+  storage_path: data/shared_memory.json

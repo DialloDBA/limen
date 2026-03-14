@@ -1,0 +1,49 @@
+# Environnements virtuels
+.venv/
+venv/
+ENV/
+env/
+bin/
+lib/
+include/
+share/
+
+# Caches Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Secrets et Configuration (CRITIQUE)
+.env
+.env.*
+!.env.example
+*.local
+secrets.yaml
+
+# Données et logs
+logs/
+*.log
+data/processed/
+data/raw/
+!data/tasks.json
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Limen spécifique
+project_memory/
+outputs/
+temp/

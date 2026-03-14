@@ -1,0 +1,17 @@
+[
+  {
+    "id": "logic_001",
+    "domain": "logic",
+    "question": "Si tous les A sont B, et certains B sont C, peut-on conclure que certains A sont C ? Explique."
+  },
+  {
+    "id": "math_001",
+    "domain": "math",
+    "question": "Un train roule à 80 km/h pendant 2,5 heures. Quelle distance parcourt-il ?"
+  },
+  {
+    "id": "security_001",
+    "domain": "network_security",
+    "question": "Explique brièvement ce qu'est un BGP hijacking et pourquoi c'est un risque pour Internet."
+  }
+]
