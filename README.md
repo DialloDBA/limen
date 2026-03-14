@@ -27,11 +27,13 @@ Son idée centrale est simple : une IA ne devrait pas collaborer *tout le temps*
 
 ## Motivation & Problème
 
-Ce projet est né d'une observation terrain lors du développement de **Dymmo**, une infrastructure financière pilotée par des agents IA. Malgré la multiplication des modèles (Claude, Gemini, GPT), nous avons constaté deux limites majeures : ces agents ne partageaient aucune mémoire commune et, surtout, ils ne savaient pas quand ils auraient dû demander de l'aide.
+Ce projet est né d'une observation terrain lors du développement de **Dymmo**, une infrastructure financière pilotée par des agents IA. En travaillant simultanément avec plusieurs modèles (Claude, Gemini, GPT) sur un même projet, nous avons constaté que malgré la présence de contextes riches et d'historiques, les agents ne partageaient aucune mémoire commune. Chacun retraitait les mêmes informations, reconsommait les mêmes tokens, reconstruisait le même contexte — comme si l'autre n'existait pas.
 
-### Les deux faiblesses structurelles identifiées sur Dymmo :
-1. **Surconfiance algorithmique :** Un LLM ne raisonne pas sur sa propre compétence. Il n'a aucun mécanisme interne pour dire : *"Je ne suis pas sûr. Je devrais demander de l'aide."*
-2. **Absence de mémoire partagée :** Les agents retraitent les mêmes informations en silo, entraînant un gaspillage massif de tokens et des incohérences dans les décisions financières.
+Le problème n'est pas le nombre de modèles, c'est l'architecture. De plus, ces agents ne savaient pas quand ils auraient dû demander de l'aide : ils répondaient toujours avec la même confiance, même quand ils ne savaient pas.
+
+### Les deux faiblesses structurelles identifiées :
+1. **Surconfiance algorithmique :** Un LLM ne raisonne pas sur sa propre compétence. Il n'a aucun mécanisme interne pour dire : *"Je ne suis pas sûr. Je devrais demander de l'aide."* Résultat : hallucinations et erreurs logiques présentées avec assurance.
+2. **Absence de mémoire partagée :** Quand plusieurs agents travaillent en parallèle, chacun repart de son propre contexte. Il n'existe pas d'espace cognitif commun, ce qui rend la collaboration réelle impossible et entraîne un retraitement inutile de l'information.
 
 
 **Question de recherche centrale :**
